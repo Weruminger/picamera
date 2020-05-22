@@ -1,6 +1,6 @@
 from picamera import PiCamera
 import numpy as np
-import time, datatime
+import time, datetime
 
 with PiCamera() as cam:
     lst_shape = cam._lens_shading_table_shape()
@@ -13,5 +13,5 @@ with PiCamera(lens_shading_table=lst) as cam:
     # time.sleep(5)
     # cam.stop_preview()
     cam.resolution = (1280,720)
-    cam.capture("./newimage" + datatime.now().replace("/","_").replace(".","_").replace(":","_").replace(" ","_")  + ".jpg")
+    cam.capture("./newimage" + datetime.now().replace("/","_").replace(".","_").replace(":","_").replace(" ","_")  + ".jpg")
 
